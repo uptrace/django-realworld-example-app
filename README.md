@@ -1,4 +1,14 @@
-# ![Django DRF Example App](project-logo.png)
+# Django real world app with Uptrace client
+
+This is a fork which demonstrates how to instrument Django application using Uptrace and
+OpenTelemetry. To run this app:
+
+```bash
+pip install -r requirements.txt
+UPTRACE_DSN="https://<token>@api.uptrace.dev/<project_id>" ./run.sh
+```
+
+---
 
 > ### Example Django DRF codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld-example-apps) API spec.
 
@@ -19,6 +29,7 @@ This repo is functionality complete — PR's and issues welcome!
 
 If all went well then your command line prompt should now start with `(productionready)`.
 
-If your command line prompt does not start with `(productionready)` at this point, try running `pyenv activate productionready` or `cd ../productionready-django-api`. 
+If your command line prompt does not start with `(productionready)` at this point, try running
+`pyenv activate productionready` or `cd ../productionready-django-api`.
 
 If pyenv is still not working, visit us in the Thinkster Slack channel so we can help you out.

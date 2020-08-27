@@ -2,8 +2,20 @@
 import os
 import sys
 
+import uptrace
+from opentelemetry.instrumentation.django import DjangoInstrumentor
+
+from opentelemetry.instrumentation.psycopg2 import Psycopg2Instrumentor
+
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conduit.settings")
+
+    upclient = uptrace.Client()
+
+    # This call is what makes the Django application be instrumented
+    DjangoInstrumentor().instrument()
+    Psycopg2Instrumentor().instrument()
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError:
